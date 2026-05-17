@@ -1,0 +1,94 @@
+<Window x:Class="DexterityHud.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:DexterityHud.Controls"
+        xmlns:vm="clr-namespace:DexterityHud.ViewModels"
+        Title="Dexterity HUD"
+        Width="1280"
+        Height="520"
+        MinWidth="900"
+        MinHeight="360"
+        WindowStartupLocation="CenterScreen"
+        Topmost="{Binding IsAlwaysOnTop, Mode=TwoWay}"
+        Background="#0D1117"
+        FontFamily="Bahnschrift">
+  <Window.Resources>
+    <DataTemplate DataType="{x:Type vm:KeyViewModel}">
+      <controls:KeyboardKey PrimaryText="{Binding PrimaryText}"
+                            SecondaryText="{Binding SecondaryText}"
+                            FingerColor="{Binding FingerColor}" />
+    </DataTemplate>
+  </Window.Resources>
+
+  <Grid Margin="24">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Border Padding="16"
+            CornerRadius="18"
+            Background="#141B25"
+            BorderBrush="#2C3748"
+            BorderThickness="1"
+            Margin="0,0,0,18">
+      <DockPanel LastChildFill="False">
+        <StackPanel DockPanel.Dock="Left">
+          <TextBlock Text="Dexterity HUD"
+                     Foreground="White"
+                     FontSize="28"
+                     FontWeight="SemiBold" />
+          <TextBlock Text="A dual-layout keyboard visualizer with live input-language tracking."
+                     Foreground="#AAB6C5"
+                     FontSize="13"
+                     Margin="0,4,0,0" />
+        </StackPanel>
+
+        <CheckBox DockPanel.Dock="Right"
+                  VerticalAlignment="Center"
+                  Content="Stay on top"
+                  IsChecked="{Binding IsAlwaysOnTop, Mode=TwoWay}"
+                  Foreground="White"
+                  FontSize="14"
+                  Padding="14,8"
+                  Background="#1E2633"
+                  BorderBrush="#344255"
+                  BorderThickness="1" />
+      </DockPanel>
+    </Border>
+
+    <ScrollViewer Grid.Row="1"
+                  HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto"
+                  Background="Transparent">
+      <Viewbox Stretch="Uniform"
+               StretchDirection="DownOnly">
+        <ItemsControl ItemsSource="{Binding Rows}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Vertical" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <ItemsControl ItemsSource="{Binding Keys}">
+                <ItemsControl.ItemsPanel>
+                  <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True"
+                               Orientation="Horizontal"
+                               Margin="0,0,0,12" />
+                  </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemContainerStyle>
+                  <Style TargetType="ContentPresenter">
+                    <Setter Property="Margin" Value="4" />
+                  </Style>
+                </ItemsControl.ItemContainerStyle>
+              </ItemsControl>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </Viewbox>
+    </ScrollViewer>
+  </Grid>
+</Window>
