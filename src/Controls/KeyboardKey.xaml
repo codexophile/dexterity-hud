@@ -19,8 +19,8 @@
       <TextBlock Text="{Binding SecondaryText, ElementName=Root}"
                  Foreground="#DCE7F3"
                  Opacity="0.95"
-                 FontSize="12"
-                 FontWeight="Medium"
+                 FontSize="20"
+                 FontWeight="SemiBold"
                  HorizontalAlignment="Right"
                  VerticalAlignment="Bottom" />
     </Grid>
