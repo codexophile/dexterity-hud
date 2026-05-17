@@ -70,11 +70,6 @@ namespace DexterityHud.ViewModels
         {
             return new[]
             {
-                new KeyViewModel(0x08, "Backspace", Brushes.DimGray),
-                new KeyViewModel(0x09, "Tab", Brushes.DimGray),
-                new KeyViewModel(0x14, "Caps", Brushes.DimGray),
-                new KeyViewModel(0x0D, "Enter", Brushes.DimGray),
-                new KeyViewModel(0xA0, "Shift", Brushes.DimGray),
                 new KeyViewModel(0x31, "1", Brushes.SaddleBrown),
                 new KeyViewModel(0x32, "2", Brushes.DarkGoldenrod),
                 new KeyViewModel(0x33, "3", Brushes.OliveDrab),
@@ -120,8 +115,6 @@ namespace DexterityHud.ViewModels
                 new KeyViewModel(0xDB, "[", Brushes.IndianRed),
                 new KeyViewModel(0xDD, "]", Brushes.IndianRed),
                 new KeyViewModel(0xDE, "'", Brushes.IndianRed),
-                new KeyViewModel(0xA1, "Shift", Brushes.DimGray),
-                new KeyViewModel(0x20, "Space", Brushes.SandyBrown)
             };
         }
 
@@ -133,32 +126,24 @@ namespace DexterityHud.ViewModels
             {
                 new KeyboardRowViewModel(new[]
                 {
-                    lookup[0x08],
                     lookup[0x31], lookup[0x32], lookup[0x33], lookup[0x34], lookup[0x35],
                     lookup[0x36], lookup[0x37], lookup[0x38], lookup[0x39], lookup[0x30]
                 }),
                 new KeyboardRowViewModel(new[]
                 {
-                    lookup[0x09],
                     lookup[0x51], lookup[0x57], lookup[0x45], lookup[0x52], lookup[0x54],
                     lookup[0x59], lookup[0x55], lookup[0x49], lookup[0x4F], lookup[0x50]
                 }),
                 new KeyboardRowViewModel(new[]
                 {
-                    lookup[0x14],
                     lookup[0x41], lookup[0x53], lookup[0x44], lookup[0x46], lookup[0x47],
                     lookup[0x48], lookup[0x4A], lookup[0x4B], lookup[0x4C], lookup[0xBA], lookup[0xDE]
                 }),
                 new KeyboardRowViewModel(new[]
                 {
-                    lookup[0xA0],
                     lookup[0x5A], lookup[0x58], lookup[0x43], lookup[0x56], lookup[0x42],
                     lookup[0x4E], lookup[0x4D], lookup[0xBC], lookup[0xBE], lookup[0xBF], lookup[0xBD],
-                    lookup[0xBB], lookup[0xDB], lookup[0xDD], lookup[0xA1]
-                }),
-                new KeyboardRowViewModel(new[]
-                {
-                    lookup[0x20]
+                    lookup[0xBB], lookup[0xDB], lookup[0xDD]
                 })
             };
         }
