@@ -127,12 +127,14 @@ namespace DexterityHud.ViewModels
                 new KeyboardRowViewModel(new[]
                 {
                     lookup[0x31], lookup[0x32], lookup[0x33], lookup[0x34], lookup[0x35],
-                    lookup[0x36], lookup[0x37], lookup[0x38], lookup[0x39], lookup[0x30]
+                    lookup[0x36], lookup[0x37], lookup[0x38], lookup[0x39], lookup[0x30],
+                    lookup[0xBD], lookup[0xBB]
                 }),
                 new KeyboardRowViewModel(new[]
                 {
                     lookup[0x51], lookup[0x57], lookup[0x45], lookup[0x52], lookup[0x54],
-                    lookup[0x59], lookup[0x55], lookup[0x49], lookup[0x4F], lookup[0x50]
+                    lookup[0x59], lookup[0x55], lookup[0x49], lookup[0x4F], lookup[0x50],
+                    lookup[0xDB], lookup[0xDD]
                 }),
                 new KeyboardRowViewModel(new[]
                 {
@@ -142,8 +144,7 @@ namespace DexterityHud.ViewModels
                 new KeyboardRowViewModel(new[]
                 {
                     lookup[0x5A], lookup[0x58], lookup[0x43], lookup[0x56], lookup[0x42],
-                    lookup[0x4E], lookup[0x4D], lookup[0xBC], lookup[0xBE], lookup[0xBF], lookup[0xBD],
-                    lookup[0xBB], lookup[0xDB], lookup[0xDD]
+                    lookup[0x4E], lookup[0x4D], lookup[0xBC], lookup[0xBE], lookup[0xBF]
                 })
             };
         }
